@@ -283,12 +283,14 @@ function getCube(num) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  /*
-  const bine = ((1 + Math.sqrt(5)) / 2 ** index - (1 - Math.sqrt(5)) / 2 ** index) / Math.sqrt(5);
-  return bine;
-  */
-  throw new Error('Not implemented');
+function getFibonacciNumber(index) {
+  // Fn = Fn-1 + Fn-2
+  const nMinusOne = index - 1;
+  const nMinusTwo = index - 2;
+  if (index <= 1) {
+    return index;
+  }
+  return getFibonacciNumber(nMinusOne) + getFibonacciNumber(nMinusTwo);
 }
 
 /**
